@@ -1,0 +1,229 @@
+libtime-parsedate-perl (2015.103-3) unstable; urgency=medium
+
+  [ Alex Muntada ]
+  * Remove inactive pkg-perl members from Uploaders.
+
+  [ Damyan Ivanov ]
+  * change Priority from 'extra' to 'optional'
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * Drop transitional package libtime-modules-perl.
+    Thanks to Holger Levsen for the bug report. (Closes: #878687)
+  * Drop debian/libtime-parsedate-perl.install.
+    Not needed anymore as we only produce one binary package.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.3.0.
+  * Bump debhelper compatibility level to 11.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 23 Jan 2019 18:01:37 +0100
+
+libtime-parsedate-perl (2015.103-2) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * debian/upstream/metadata: change GitHub/CPAN URL(s) to HTTPS.
+  * Remove Jay Bonci from Uploaders. Thanks for your work!
+  * Add build dependency on tzdata.
+    Thanks to Lucas Nussbaum for the bug report. (Closes: #839442)
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 01 Oct 2016 16:59:19 +0200
+
+libtime-parsedate-perl (2015.103-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * Add debian/upstream/metadata.
+  * Import upstream version 2015.103.
+  * Drop fix_manpage_typo.patch, merged upstream.
+  * Update years of packaging copyright.
+  * Mark package as autopkgtest-able.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Bump debhelper compatibility level to 9.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 21 Nov 2015 20:11:58 +0100
+
+libtime-parsedate-perl (2013.1113-2) unstable; urgency=medium
+
+  * Add Breaks/Replaces on the old libtime-modules-perl to
+    libtime-parsedate-perl.
+    Thanks to Axel Beckert for spotting this mistake,
+    (Closes: #749825)
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 30 May 2014 02:57:51 +0200
+
+libtime-parsedate-perl (2013.1113-1) unstable; urgency=medium
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * debian/copyright: Replace DEP5 Format-Specification URL from
+    svn.debian.org to anonscm.debian.org URL.
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ Axel Beckert ]
+  * debian/copyright: migrate pre-1.0 format to 1.0 using "cme fix dpkg-
+    copyright"
+
+  [ Daniel Lintott ]
+  * debian/watch - Use new upstream name
+  * Rename upstream source
+  * Imported Upstream version 2013.1113
+  * Refresh and forward fix_manpage_typo.patch
+  * Add myself to uploaders
+  * Bump standards version to 3.9.5
+  * Remove trailing slash from metacpan homepage url
+  * Rename binary package to libtime-parsedate-perl
+  * Add transitional package for libtime-modules-perl
+  * Update VCS Entries to new location
+
+ -- Daniel Lintott <daniel@serverb.co.uk>  Wed, 28 May 2014 16:25:27 +0100
+
+libtime-modules-perl (2011.0517-1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: Changed: Switched Vcs-Browser field to ViewSVN
+    (source stanza).
+  * debian/control: Added: ${misc:Depends} to Depends: field.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ gregor herrmann ]
+  * New upstream release (closes: #627425).
+  * Switch to source format 3.0 (quilt); remove quilt framework.
+  * debian/watch: extend regexp for matching upstream versions.
+  * Patches: remove dont_specify_perl_release.patch (applied upstream),
+    refresh fix_manpage_typo.patch.
+  * Use tiny debian/rules.
+  * Set Standards-Version to 3.9.2 (no changes).
+  * Bump debhelper compatibility level to 8.
+  * debian/copyright: use DEP5 format, update copyright and license
+    information.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 20 May 2011 16:46:11 +0200
+
+libtime-modules-perl (2006.0814-2) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: Added: Vcs-Svn field (source stanza); Vcs-Browser
+    field (source stanza); Homepage field (source stanza).
+  * Set Maintainer to Debian Perl Group.
+  * Use dist-based URL in debian/watch.
+  * debian/rules: delete /usr/lib/perl5 only if it exists.
+
+  [ David Paleino ]
+  * debian/control: added quilt to Build-Depends
+  * debian/patches: added patch to fix typo in the manpage (Closes: #445710)
+  * debian/rules: updated to handle quilt patch system (plus something else)
+  * debian/dirs removed
+
+  [ Gunnar Wolf ]
+  * Added myself as an uploader
+  * Moved one remaining patch from the diff.gz into quilt
+  * Upgraded debhelper dependency to 6
+  * Moved perl from b-d to b-d-i
+
+ -- Gunnar Wolf <gwolf@debian.org>  Thu, 07 Feb 2008 19:31:28 -0600
+
+libtime-modules-perl (2006.0814-1) unstable; urgency=low
+
+  * New upstream release
+  * Fix debian/watch so uupdate will work
+  * Updated to policy-version 3.7.2.2 (No other changes)
+  * Updated rules to only clean if Makefile exists for lintian
+
+ -- Jay Bonci <jaybonci@debian.org>  Tue, 03 Jul 2007 10:29:03 -0400
+
+libtime-modules-perl (2003.1126-2) unstable; urgency=low
+
+  * Adds debian/watch file so uscan will actually work
+
+ -- Jay Bonci <jaybonci@debian.org>  Mon, 11 Oct 2004 02:59:57 -0400
+
+libtime-modules-perl (2003.1126-1) unstable; urgency=low
+
+  * New upstream version
+  * New maintainer (Closes: #233665)
+  * Policy version bumped to 3.6.1.0 (No other changes)
+  * Cleaned up podchecker warning for line-containing-only-whitespace in CTime.pm (line 181)
+  * Moved over to my standard rules template
+  * Added debian/compat file, per debhelper best practices
+  * Versioned depends on debhelper now at version 4.0 or higher
+
+ -- Jay Bonci <jaybonci@debian.org>  Wed, 25 Feb 2004 00:50:50 -0500
+
+libtime-modules-perl (2003.0211-2) unstable; urgency=low
+
+  * Orphan this package
+
+ -- Igor Genibel <igenibel@debian.org>  Thu, 19 Feb 2004 11:25:48 +0100
+
+libtime-modules-perl (2003.0211-1) unstable; urgency=low
+
+  * New Maintainer (Closes: #206099)
+  * New Upstream realease
+  * Apply a patch from Nicolas Bertolissio to improve package description
+    (Closes: #205284)
+
+ -- Igor Genibel <igenibel@debian.org>  Mon, 18 Aug 2003 22:59:11 +0200
+
+libtime-modules-perl (100.010301-4) unstable; urgency=low
+
+  * Ack NMU.  Closes: #190479, #110923.
+  * Orphaning this package; setting maintainer to QA Group.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon, 18 Aug 2003 14:22:49 -0500
+
+libtime-modules-perl (100.010301-3.1) unstable; urgency=low
+
+  * NMU.
+  * Add Build-Depends-Indep field.  Closes: #190479.
+  * Update Section and Priority to match overrides file.  Closes: #110923.
+
+ -- Daniel Schepler <schepler@debian.org>  Mon, 28 Jul 2003 15:13:19 -0700
+
+libtime-modules-perl (100.010301-3) unstable; urgency=low
+
+  * Expanded debian/copyright.  Closes: #157660.
+
+ -- John Goerzen <jgoerzen@complete.org>  Mon, 28 Oct 2002 16:11:48 -0600
+
+libtime-modules-perl (100.010301-2) unstable; urgency=low
+
+  * Fixed binary-indep target.  Closes: #157512.
+
+ -- John Goerzen <jgoerzen@complete.org>  Tue, 15 Oct 2002 09:14:22 -0500
+
+libtime-modules-perl (100.010301-1) unstable; urgency=low
+
+  * New upstream release.  Closes: #84027.
+  * Update standards version.  Closes: #86900.
+  * Redid description.  Closes: #82773.
+  * Build with Perl 5.6.
+  * Fixed /usr/doc problem.
+
+ -- John Goerzen <jgoerzen@complete.org>  Thu, 22 Feb 2001 14:24:21 -0500
+
+libtime-modules-perl (99.062301-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- John Goerzen <jgoerzen@complete.org>  Wed, 23 Jun 1999 11:35:02 +1000
+
+Local variables:
+mode: debian-changelog
+End:

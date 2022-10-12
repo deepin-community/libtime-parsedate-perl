@@ -1,0 +1,31 @@
+Source: libtime-parsedate-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 11)
+Build-Depends-Indep: perl,
+                     tzdata
+Standards-Version: 4.3.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libtime-parsedate-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libtime-parsedate-perl.git
+Homepage: https://metacpan.org/release/Time-ParseDate
+
+Package: libtime-parsedate-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Breaks: libtime-modules-perl (<< 2013.1113-1~)
+Replaces: libtime-modules-perl (<< 2013.1113-1~)
+Description: collection of Perl modules for time/date manipulation
+ This package contains the following perl5 modules:
+ .
+  Time::CTime.pm
+         ctime, strftime, and asctime
+  Time::JulianDay.pm
+         Julian Day conversions
+  Time::ParseDate.pm
+         Reverses strftime and also understands relative times
+  Time::Timezone.pm
+  Time::DaysInMonth.pm
